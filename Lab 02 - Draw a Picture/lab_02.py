@@ -14,6 +14,7 @@ arcade.draw_circle_filled(20, 575, 2, arcade.color.YELLOW)
 
 arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
 arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
+arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
 
 arcade.draw_line(0, 100, 225, 100, arcade.color.BLACK, border_width=1)
 arcade.draw_line(375, 100, 600, 100, arcade.color.BLACK, border_width=1)
@@ -39,6 +40,10 @@ arcade.draw_line(520, 0, 520, 100, arcade.color.BLACK, 1)
 arcade.draw_line(540, 0, 540, 100, arcade.color.BLACK, 1)
 arcade.draw_line(560, 0, 560, 100, arcade.color.BLACK, 1)
 arcade.draw_line(580, 0, 580, 100, arcade.color.BLACK, 1)
+arcade.draw_line(226, 110, 374, 110, arcade.color.BLACK, 1)
+arcade.draw_line(230, 128, 369, 128, arcade.color.BLACK, 1)
+arcade.draw_text("CEMETARY", 230, 110, arcade.color.BLACK, 19, font_name="Gungsuh")
+
 
 
 
