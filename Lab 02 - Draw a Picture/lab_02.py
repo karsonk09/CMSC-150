@@ -2,20 +2,62 @@ import arcade
 
 arcade.open_window("My Drawing", 600, 600)
 
+# Night Sky
 arcade.set_background_color((58, 56, 59))
 
 arcade.start_render()
 
+# Grass
 arcade.draw_rectangle_filled(300, 100, 600, 200, arcade.color.DARK_GREEN)
 
+# Moon
 arcade.draw_circle_filled(525, 525, 50, arcade.color.GHOST_WHITE)
 
+# Cloud
+arcade.draw_circle_filled(425, 500, 45, arcade.color.LIGHT_GRAY)
+arcade.draw_circle_filled(380, 525, 56, arcade.color.LIGHT_GRAY)
+arcade.draw_circle_filled(335, 515, 50, arcade.color.LIGHT_GRAY)
+arcade.draw_circle_filled(290, 515, 30, arcade.color.LIGHT_GRAY)
+
+# Stars
 arcade.draw_circle_filled(20, 575, 2, arcade.color.YELLOW)
+arcade.draw_circle_filled(67, 575, 2, arcade.color.YELLOW)
+arcade.draw_circle_filled(300, 575, 2, arcade.color.YELLOW)
+arcade.draw_circle_filled(425, 575, 2, arcade.color.YELLOW)
+arcade.draw_circle_filled(500, 575, 2, arcade.color.YELLOW)
+arcade.draw_circle_filled(38, 532, 2, arcade.color.YELLOW)
+
+# Graves
+arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
+arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
+arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
+
+# These graves need changed coordinates
+arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
+arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
+arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
 
 arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
 arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
 arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
 
+arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
+arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
+arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
+
+arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
+arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
+arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
+
+arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
+arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
+arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
+
+arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
+arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
+arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
+
+# Fence number 1
 arcade.draw_line(0, 100, 225, 100, arcade.color.BLACK, border_width=1)
 arcade.draw_line(375, 100, 600, 100, arcade.color.BLACK, border_width=1)
 arcade.draw_line(20, 0, 20, 100, arcade.color.BLACK, 1)
@@ -43,12 +85,7 @@ arcade.draw_line(580, 0, 580, 100, arcade.color.BLACK, 1)
 arcade.draw_line(226, 110, 374, 110, arcade.color.BLACK, 1)
 arcade.draw_line(230, 128, 369, 128, arcade.color.BLACK, 1)
 arcade.draw_text("CEMETARY", 230, 110, arcade.color.BLACK, 19, font_name="Gungsuh")
-
-
-
-
 arcade.draw_arc_outline(300, 100, 75, 75, arcade.color.BLACK, 0, 180)
-
 
 arcade.finish_render()
 
