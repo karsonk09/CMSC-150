@@ -97,7 +97,6 @@ arcade.draw_rectangle_filled(125, 125, 50, 65, arcade.color.GRAY)
 arcade.draw_arc_filled(125, 150, 25, 20, arcade.color.GRAY, 0, 180)
 arcade.draw_text("R.I.P.", 103, 140, arcade.color.BLACK, 17)
 
-# These graves need changed coordinates
 arcade.draw_rectangle_filled(200, 100, 50, 65, arcade.color.GRAY)
 arcade.draw_arc_filled(200, 125, 25, 20, arcade.color.GRAY, 0, 180)
 arcade.draw_text("R.I.P.", 178, 115, arcade.color.BLACK, 17)
