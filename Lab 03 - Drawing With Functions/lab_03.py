@@ -1,7 +1,6 @@
 import arcade
 
 
-
 def draw_grass():
     arcade.draw_rectangle_filled(300, 150, 600, 300, arcade.color.FOREST_GREEN)
 
@@ -16,7 +15,6 @@ def draw_sun(position_x, position_y):
     arcade.draw_line(position_x + 28, position_y - 33, position_x + 45, position_y - 45, arcade.color.YELLOW)
     arcade.draw_line(position_x - 28, position_y + 33, position_x - 45, position_y + 45, arcade.color.YELLOW)
     arcade.draw_line(position_x - 28, position_y - 33, position_x - 45, position_y - 45, arcade.color.YELLOW)
-
 
 
 def draw_house(position_x, position_y):
@@ -37,6 +35,7 @@ def draw_person(position_x, position_y):
     arcade.draw_line(position_x, position_y, position_x - 15, position_y - 15, arcade.color.BLACK)
     arcade.draw_line(position_x, position_y + 9, position_x + 12, position_y + 21, arcade.color.BLACK)
     arcade.draw_line(position_x, position_y + 9, position_x - 12, position_y + 21, arcade.color.BLACK)
+
 
 def draw_airplane(position_x, position_y):
     arcade.draw_rectangle_filled(position_x, position_y, 150, 30, arcade.color.WHITE)
@@ -90,6 +89,7 @@ def draw_bush(position_x, position_y):
     arcade.draw_circle_filled(position_x + 25, position_y - 5, 2, arcade.color.STRAWBERRY)
     arcade.draw_circle_filled(position_x + 30, position_y + 30, 2, arcade.color.STRAWBERRY)
 
+
 def on_draw(delta_time):
     arcade.start_render()
 
@@ -112,4 +112,5 @@ def main():
     arcade.schedule(on_draw, 1 / 80)
     arcade.run()
 
-main()
+if __name__ == "__main__":
+    main()
