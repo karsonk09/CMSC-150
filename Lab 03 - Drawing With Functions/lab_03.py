@@ -90,21 +90,26 @@ def draw_bush(position_x, position_y):
     arcade.draw_circle_filled(position_x + 25, position_y - 5, 2, arcade.color.STRAWBERRY)
     arcade.draw_circle_filled(position_x + 30, position_y + 30, 2, arcade.color.STRAWBERRY)
 
-
-def main():
-    arcade.open_window("Drawing With Functions", 600, 600)
-    arcade.set_background_color(arcade.color.LIGHT_BLUE)
+def on_draw(delta_time):
     arcade.start_render()
 
     draw_grass()
     draw_sun(500, 500)
     draw_house(150, 255)
     draw_person(450, 100)
-    draw_airplane(350, 550)
+    draw_airplane(on_draw.airplane_position, 550)
     draw_bush(225, 178)
     draw_bush(80, 178)
+    on_draw.airplane_position = on_draw.airplane_position - 5
+    if on_draw.airplane_position < -100:
+        on_draw.airplane_position = 750
+on_draw.airplane_position = 500
 
-    arcade.finish_render()
+
+def main():
+    arcade.open_window("Drawing With Functions", 600, 600)
+    arcade.set_background_color(arcade.color.LIGHT_BLUE)
+    arcade.schedule(on_draw, 1 / 80)
     arcade.run()
 
 main()
