@@ -1,15 +1,6 @@
 import random
 
 
-# End sequence
-def game_over():
-    end = ("Would you like to play again? (Y/N) ")
-    if end == "Y":
-        main()
-    if end == "N":
-        print("GAME OVER")
-
-
 # Intro to game
 def main():
     print("Welcome to Pirates!")
@@ -108,7 +99,6 @@ def main():
         elif player_hunger > 6:
             print("You have died of hunger.")
             done = True
-            game_over()
 
         # Boat condition
         if boat_condition > 5 and boat_condition <= 8:
@@ -117,7 +107,6 @@ def main():
         elif boat_condition > 8:
             print("Your boat has sunk!")
             done = True
-            game_over()
 
         # Pirates distance
         if dist_traveled_p >= miles_traveled:

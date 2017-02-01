@@ -20,7 +20,7 @@
     <SUITE FILE_PATH="coverage/CMSC150$variable_samples.coverage" NAME="variable_samples Coverage Results" MODIFIED="1484751384889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sample Programs" />
     <SUITE FILE_PATH="coverage/CMSC150$using_return.coverage" NAME="using return Coverage Results" MODIFIED="1484924135363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sample Programs" />
     <SUITE FILE_PATH="coverage/CMSC150$drawing_with_functions.coverage" NAME="drawing_with_functions Coverage Results" MODIFIED="1484751393011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sample Programs" />
-    <SUITE FILE_PATH="coverage/CMSC150$main.coverage" NAME="main Coverage Results" MODIFIED="1485899665073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 04 - Camel" />
+    <SUITE FILE_PATH="coverage/CMSC150$main.coverage" NAME="main Coverage Results" MODIFIED="1485961138737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 04 - Camel" />
     <SUITE FILE_PATH="coverage/CMSC150$drawing_program.coverage" NAME="drawing_program Coverage Results" MODIFIED="1484338141254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sample Programs" />
     <SUITE FILE_PATH="coverage/CMSC150$Practice.coverage" NAME="Practice Coverage Results" MODIFIED="1485960930642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sample Programs" />
     <SUITE FILE_PATH="coverage/CMSC150$lab_02.coverage" NAME="lab_02 Coverage Results" MODIFIED="1484748090929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 02 - Draw a Picture" />
@@ -35,17 +35,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab 04 - Camel/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
+            <state relative-caret-position="442">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Practice.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Practice.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sample Programs/Practice.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -80,8 +80,8 @@
         <option value="$PROJECT_DIR$/Sample Programs/drawing_program.py" />
         <option value="$PROJECT_DIR$/Sample Programs/drawing_with_functions.py" />
         <option value="$PROJECT_DIR$/Lab 04 - Camel Lab/lab_04.py" />
-        <option value="$PROJECT_DIR$/Lab 04 - Camel/main.py" />
         <option value="$PROJECT_DIR$/Sample Programs/Practice.py" />
+        <option value="$PROJECT_DIR$/Lab 04 - Camel/main.py" />
       </list>
     </option>
   </component>
@@ -222,7 +222,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.Practice">
+  <component name="RunManager" selected="Python.main">
     <configuration default="false" name="drawing_with_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -530,8 +530,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Practice" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Practice" />
         <item index="2" class="java.lang.String" itemvalue="Python.lab_03" />
         <item index="3" class="java.lang.String" itemvalue="Python.using return" />
         <item index="4" class="java.lang.String" itemvalue="Python.drawing_with_functions" />
@@ -555,7 +555,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.42301944" order="0" side_tool="false" content_ui="combo" />
@@ -948,18 +948,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab 04 - Camel/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sample Programs/Practice.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab 04 - Camel/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding />
         </state>
       </provider>
