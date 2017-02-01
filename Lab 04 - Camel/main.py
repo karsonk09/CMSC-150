@@ -92,12 +92,12 @@ def main():
                     player_thirst = 0
                     camel_tiredness = 0
 
-        # Player chooses to drink from canteen
+        # Player chooses to eat from reserves
         elif choice.upper() == "A":
             if food_reserves == 0:
-                print("You have no more drinks left in your canteen!")
+                print("You have no more food left in your reserves!")
             elif food_reserves > 0:
-                print("You take a drink from your canteen.")
+                print("You eat some food from your reserves.")
                 food_reserves -= 1
         print()
 
@@ -119,7 +119,7 @@ def main():
             done = True
             game_over()
 
-        # Natives distance
+        # Pirates distance
         if dist_traveled_p >= miles_traveled:
             print("The pirates have caught you!")
             done = True
