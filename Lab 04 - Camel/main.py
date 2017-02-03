@@ -79,7 +79,7 @@ def main():
                 island = random.randrange(1, 21)
                 if island == 9:
                     print("You have found an island!")
-                    canteen_drinks = 4
+                    food_reserves = 4
                     player_thirst = 0
                     camel_tiredness = 0
 
