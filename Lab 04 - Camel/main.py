@@ -4,9 +4,9 @@ import random
 # End sequence
 def game_over():
     end = input("Would you like to play again? (Y/N) ")
-    if end == "Y":
+    if end.upper() == "Y":
         main()
-    if end == "N":
+    if end.upper() == "N":
         print("GAME OVER")
 
 
@@ -56,16 +56,16 @@ def main():
         elif choice.upper() == "D":
             boat_condition = 0
             print("You have made repairs to your boat.")
-            dist_traveled_p += random.randrange(8, 16)
+            dist_traveled_p += random.randrange(8, 15)
 
         # Player chooses to travel at full sail
         elif choice.upper() == "C":
-            miles_turn = random.randrange(10, 18)
+            miles_turn = random.randrange(11, 19)
             miles_traveled += miles_turn
             print("You have traveled ", miles_turn, "miles!")
             player_hunger += 1
             boat_condition += random.randrange(1, 4)
-            dist_traveled_p += random.randrange(8, 16)
+            dist_traveled_p += random.randrange(8, 15)
             # Island
             if not done and player_hunger < 6 and boat_condition < 8:
                 island = random.randrange(1, 21)
@@ -82,7 +82,7 @@ def main():
             print("You have traveled ", miles_turn, "miles!")
             player_hunger += 1
             boat_condition += 1
-            dist_traveled_p += random.randrange(8, 16)
+            dist_traveled_p += random.randrange(7, 15)
             # Island
             if not done and player_hunger < 6 and boat_condition < 8:
                 island = random.randrange(1, 21)
