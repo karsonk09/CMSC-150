@@ -1,6 +1,8 @@
 import random
 
 
+<<<<<<< HEAD
+=======
 # End sequence
 def game_over():
     end = input("Would you like to play again? (Y/N) ")
@@ -10,6 +12,7 @@ def game_over():
         print("GAME OVER")
 
 
+>>>>>>> d79c973b9117b91f6de36e8453f547febc48d393
 # Intro to game
 def main():
     print("Welcome to Pirates!")
@@ -89,16 +92,25 @@ def main():
                 if island == 9:
                     print("You have found an island!")
                     food_reserves = 4
+<<<<<<< HEAD
+                    player_thirst = 0
+                    camel_tiredness = 0
+=======
                     player_hunger = 0
                     boat_condition = 0
+>>>>>>> d79c973b9117b91f6de36e8453f547febc48d393
 
         # Player chooses to eat from reserves
         elif choice.upper() == "A":
             if food_reserves == 0:
                 print("You have no more food left in your reserves!")
             elif food_reserves > 0:
+<<<<<<< HEAD
+                print("You eat some food from your reserves.")
+=======
                 print("You eat food from your reserves.")
                 player_hunger = 0
+>>>>>>> d79c973b9117b91f6de36e8453f547febc48d393
                 food_reserves -= 1
 
         # Player hunger
@@ -108,7 +120,6 @@ def main():
         elif player_hunger > 6:
             print("You have died of hunger.")
             done = True
-            game_over()
 
         # Boat condition
         if boat_condition > 5 and boat_condition <= 8:
@@ -117,7 +128,6 @@ def main():
         elif boat_condition > 8:
             print("Your boat has sunk!")
             done = True
-            game_over()
 
         # Pirates distance
         if dist_traveled_p >= miles_traveled:
