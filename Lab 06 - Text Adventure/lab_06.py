@@ -83,7 +83,3 @@ while not done:
     else:
         print("That is not a direction you can travel!")
         print()
-
-
-
-
