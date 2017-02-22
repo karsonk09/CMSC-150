@@ -34,7 +34,7 @@ class MyApplication(arcade.Window):
         # Making the mouse invisible
         self.set_mouse_visible(False)
 
-        # Loading sound files so I dont have to load them over and over
+        # Loading sound files so I don't have to load them over and over
         self.coin_sound = arcade.load_sound("sounds/coin3.ogg")
 
         self.hit_sound = arcade.load_sound("sounds/hit1.ogg")

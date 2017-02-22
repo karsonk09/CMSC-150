@@ -3,8 +3,8 @@ import arcade
 
 SPRITE_SCALING = 0.5
 
-SCREEN_HEIGHT = 800
-SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 800
 
 
 class MyApplication(arcade.Window):
@@ -29,7 +29,42 @@ class MyApplication(arcade.Window):
         self.score = 0
 
         self.player_sprite = arcade.Sprite("character.png", SPRITE_SCALING)
+        self.player_sprite.center_x = 100
+        self.player_sprite.center_y = 100
+
         self.all_sprites_list.append(self.player_sprite)
+
+        for i in range(50):
+            coin = arcade.Sprite("coin_01.png", SPRITE_SCALING * 0.40)
+            coin.center_x = random.randrange(SCREEN_WIDTH)
+            coin.center_y = random.randrange(SCREEN_HEIGHT)
+            self.coin_list.append(coin)
+            self.all_sprites_list.append(coin)
+
+    def on_draw(self):
+        arcade.start_render()
+        self.all_sprites_list.draw()
+        self.coin_list.draw()
+        arcade.draw_text("Player Score: " + str(self.score), 10, 20, arcade.color.WHITE, 24)
+
+    def animate(self, delta_time):
+
+        hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
+        for coin in hit_list:
+            coin.kill()
+            self.score += 1
+
+        if len(self.coin_list) == 0:
+            for i in range(50):
+                coin = arcade.Sprite("coin_01.png", SPRITE_SCALING * 0.40)
+                coin.center_x = random.randrange(SCREEN_WIDTH)
+                coin.center_y = random.randrange(SCREEN_HEIGHT)
+                self.coin_list.append(coin)
+                self.all_sprites_list.append(coin)
+
+    def on_mouse_motion(self, x, y, dx, dy):
+        self.player_sprite.center_x = x
+        self.player_sprite.center_y = y
 
 
 def main():
