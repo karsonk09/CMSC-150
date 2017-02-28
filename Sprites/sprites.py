@@ -1,10 +1,38 @@
 import random
 import arcade
+import math
 
 SPRITE_SCALING = 0.5
 
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 800
+
+
+class Bullet(arcade.Sprite):
+    def update(self):
+        self.center_y += 5
+
+
+class Coin(arcade.Sprite):
+
+    def __init__(self, filename, sprite_scaling):
+
+        super().__init__(filename, sprite_scaling)
+
+        self.change_x = 0
+        self.change_y = 0
+
+        self.angle = 0
+        self.radius = 0
+        self.angle_speed = 0
+        self.circle_center_x = 0
+        self.circle_center_y = 0
+
+    def update(self):
+        self.center_x = math.sin(self.angle) * self.radius + self.circle_center_x
+        self.center_y = math.cos(self.angle) * self.radius + self.circle_center_y
+
+        self.angle += self.angle_speed
 
 
 class MyApplication(arcade.Window):
@@ -35,11 +63,23 @@ class MyApplication(arcade.Window):
         self.all_sprites_list.append(self.player_sprite)
 
         for i in range(50):
-            coin = arcade.Sprite("coin_01.png", SPRITE_SCALING * 0.40)
-            coin.center_x = random.randrange(SCREEN_WIDTH)
-            coin.center_y = random.randrange(SCREEN_HEIGHT)
-            self.coin_list.append(coin)
+            coin = Coin("coin_01.png", SPRITE_SCALING * 0.40)
+
+            coin.circle_center_x = random.randrange(SCREEN_WIDTH)
+            coin.circle_center_y = random.randrange(SCREEN_HEIGHT)
+            coin.radius = random.randrange(10, 200)
+            coin.angle = random.random() * 2 * math.pi
+            coin.angle_speed = 0.008
+
             self.all_sprites_list.append(coin)
+            self.coin_list.append(coin)
+
+    def on_mouse_press(self, x, y, button, modifiers):
+        bullet = Bullet("laserBlue01.png", SPRITE_SCALING * 1.5)
+        self.all_sprites_list.append(bullet)
+        bullet.center_x = x
+        bullet.center_y = y
+        bullet.angle = 90
 
     def on_draw(self):
         arcade.start_render()
@@ -49,18 +89,12 @@ class MyApplication(arcade.Window):
 
     def animate(self, delta_time):
 
+        self.all_sprites_list.update()
+
         hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
         for coin in hit_list:
             coin.kill()
             self.score += 1
-
-        if len(self.coin_list) == 0:
-            for i in range(50):
-                coin = arcade.Sprite("coin_01.png", SPRITE_SCALING * 0.40)
-                coin.center_x = random.randrange(SCREEN_WIDTH)
-                coin.center_y = random.randrange(SCREEN_HEIGHT)
-                self.coin_list.append(coin)
-                self.all_sprites_list.append(coin)
 
     def on_mouse_motion(self, x, y, dx, dy):
         self.player_sprite.center_x = x
