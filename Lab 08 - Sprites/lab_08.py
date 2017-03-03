@@ -57,6 +57,8 @@ class MyApplication(arcade.Window):
         self.set_mouse_visible(False)
         arcade.set_background_color(arcade.color.BURNT_ORANGE)
 
+        self.coin_sound = arcade.load_sound("coin3.ogg")
+
     # Setup, includes defined variables, player sprite, and player sprite position
     def setup(self):
         self.all_sprite_list = arcade.SpriteList()
@@ -112,6 +114,7 @@ class MyApplication(arcade.Window):
         # Detects Collisions
         hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.good_sprites)
         for coin in hit_list:
+            arcade.play_sound(self.coin_sound)
             coin.kill()
             self.score += 1
 

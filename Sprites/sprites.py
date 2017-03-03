@@ -10,7 +10,13 @@ SCREEN_WIDTH = 800
 
 class Bullet(arcade.Sprite):
     def update(self):
-        self.center_y += 5
+        self.center_x += self.change_x
+        self.center_y += self.change_y
+
+        if self.bottom > SCREEN_HEIGHT:
+            self.kill()
+        if self.left > SCREEN_WIDTH:
+            self.kill()
 
 
 class Coin(arcade.Sprite):
@@ -43,8 +49,10 @@ class MyApplication(arcade.Window):
 
         self.all_sprites_list = None
         self.coin_list = None
+        self.bullet_list = None
 
         self.player_sprite = None
+        self.reticle = None
         self.score = 0
 
         self.set_mouse_visible(False)
@@ -53,14 +61,18 @@ class MyApplication(arcade.Window):
     def setup(self):
         self.all_sprites_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
+        self.bullet_list = arcade.SpriteList()
+
+        self.reticle = arcade.Sprite("reticle.png", SPRITE_SCALING)
 
         self.score = 0
 
         self.player_sprite = arcade.Sprite("character.png", SPRITE_SCALING)
-        self.player_sprite.center_x = 100
-        self.player_sprite.center_y = 100
+        self.player_sprite.left = 0
+        self.player_sprite.bottom = 0
 
         self.all_sprites_list.append(self.player_sprite)
+        self.all_sprites_list.append(self.reticle)
 
         for i in range(50):
             coin = Coin("coin_01.png", SPRITE_SCALING * 0.40)
@@ -77,9 +89,24 @@ class MyApplication(arcade.Window):
     def on_mouse_press(self, x, y, button, modifiers):
         bullet = Bullet("laserBlue01.png", SPRITE_SCALING * 1.5)
         self.all_sprites_list.append(bullet)
-        bullet.center_x = x
-        bullet.center_y = y
-        bullet.angle = 90
+        self.bullet_list.append(bullet)
+
+        start_x = self.player_sprite.center_x
+        start_y = self.player_sprite.center_y
+
+        dest_x = x
+        dest_y = y
+
+        x_diff = dest_x - start_x
+        y_diff = dest_y - start_y
+
+        angle = math.atan2(y_diff, x_diff)
+        print("Angle: " + str(angle))
+
+        bullet.change_x = math.cos(angle) * 5
+        bullet.change_y = math.sin(angle) * 5
+
+        bullet.angle = math.degrees(angle)
 
     def on_draw(self):
         arcade.start_render()
@@ -96,10 +123,16 @@ class MyApplication(arcade.Window):
             coin.kill()
             self.score += 1
 
-    def on_mouse_motion(self, x, y, dx, dy):
-        self.player_sprite.center_x = x
-        self.player_sprite.center_y = y
+        for bullet in self.bullet_list:
+            hit_list = arcade.check_for_collision_with_list(bullet, self.coin_list)
+            for coin in hit_list:
+                coin.kill()
+                bullet.kill()
+                self.score += 1
 
+    def on_mouse_motion(self, x, y, dx, dy):
+        self.reticle.center_x = x
+        self.reticle.center_y = y
 
 def main():
     window = MyApplication(SCREEN_WIDTH, SCREEN_HEIGHT)
